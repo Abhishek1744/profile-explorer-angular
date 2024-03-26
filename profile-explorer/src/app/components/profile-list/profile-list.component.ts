@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from '../profile';
 import { ProfileService } from '../profile.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./profile-list.component.css']
 })
 export class ProfileListComponent implements OnInit {
-  profiles: any[];
+  profiles: Profile[] = [];
 
   constructor(private profileService: ProfileService) { }
 
