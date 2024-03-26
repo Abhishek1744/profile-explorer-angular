@@ -1,0 +1,35 @@
+/* src/app/components/admin-panel/admin-panel.component.css */
+.profile-form {
+    margin-bottom: 20px;
+  }
+  
+  .profile-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .profile-form input,
+  .profile-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .profile-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .profile-list li {
+    margin-bottom: 10px;
+  }
+  
+  .profile-list button {
+    margin-left: 10px;
+  }
+  

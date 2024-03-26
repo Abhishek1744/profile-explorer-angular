@@ -1,6 +1,21 @@
-<ul>
-    <li *ngFor="let profile of profiles">
-      <a [routerLink]="['/profile', profile.id]">{{ profile.name }}</a>
-    </li>
-  </ul>
+<!-- src/app/components/profile-list/profile-list.component.html -->
+<div *ngIf="selectedProfile" class="profile-details">
+    <h2>{{ selectedProfile.name }}</h2>
+    <img [src]="selectedProfile.photoUrl" alt="Profile Photo" />
+    <p>{{ selectedProfile.description }}</p>
+    <p>Contact: {{ selectedProfile.contact }}</p>
+    <p>Interests: {{ selectedProfile.interests }}</p>
+    <button (click)="closeProfileDetails()">Close</button>
+  </div>
+  <input type="text" placeholder="Search..." (input)="filterProfiles($event.target.value)" />
+  <div class="profile-container">
+    <div *ngFor="let profile of filteredProfiles" class="profile-card" (click)="showProfileDetails(profile)">
+      <img [src]="profile.photoUrl" alt="Profile Photo" />
+      <h3>{{ profile.name }}</h3>
+      <p>{{ profile.description }}</p>
+      <button (click)="showSummary(profile)">Summary</button>
+    </div>
+  </div>
+  <div #map class="map"></div>
+  <div *ngIf="mapService.geocodeError" class="error-message">{{ mapService.geocodeError }}</div>
   

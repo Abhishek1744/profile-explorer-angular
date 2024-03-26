@@ -1,9 +1,8 @@
+// src/app/models/profile.model.ts
 export interface Profile {
-    id: number;
+    address(address: any): unknown;
     name: string;
-    age: number;
-    address: string;
-    email: string;
-    phone: string;
+    photoUrl: string;
+    description: string;
   }
   

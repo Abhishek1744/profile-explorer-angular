@@ -1,1 +1,36 @@
-<p>admin-panel works!</p>
+<!-- src/app/components/admin-panel/admin-panel.component.html -->
+<div *ngIf="selectedProfile" class="profile-form">
+    <h2 *ngIf="mode === 'add'">Add Profile</h2>
+    <h2 *ngIf="mode === 'edit'">Edit Profile</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="selectedProfile.name" name="name" required />
+  
+      <label>Photo URL:</label>
+      <input type="url" [(ngModel)]="selectedProfile.photoUrl" name="photoUrl" required />
+  
+      <label>Description:</label>
+      <textarea [(ngModel)]="selectedProfile.description" name="description" required></textarea>
+  
+      <label>Contact:</label>
+      <input type="text" [(ngModel)]="selectedProfile.contact" name="contact" required />
+  
+      <label>Interests:</label>
+      <input type="text" [(ngModel)]="selectedProfile.interests" name="interests" required />
+  
+      <button *ngIf="mode === 'add'" (click)="addProfile(selectedProfile)">Add</button>
+      <button *ngIf="mode === 'edit'" (click)="editProfile(selectedProfile)">Save</button>
+      <button (click)="clearSelection()">Cancel</button>
+    </form>
+  </div>
+  <div class="profile-list">
+    <h2>Profiles</h2>
+    <ul>
+      <li *ngFor="let profile of profiles">
+        {{ profile.name }}
+        <button (click)="selectProfile(profile)">Edit</button>
+        <button (click)="deleteProfile(profile.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
