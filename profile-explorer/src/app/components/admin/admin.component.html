@@ -1,0 +1,25 @@
+<!-- src/app/components/admin/admin.component.html -->
+<div>
+    <h2>Add Profile</h2>
+    <form (submit)="addProfile(newProfile)">
+      <input type="text" placeholder="Name" [(ngModel)]="newProfile.name" required />
+      <input type="text" placeholder="Description" [(ngModel)]="newProfile.description" required />
+      <input type="text" placeholder="Photo URL" [(ngModel)]="newProfile.photoUrl" required />
+      <input type="text" placeholder="Address" [(ngModel)]="newProfile.address" required />
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <div>
+    <h2>Edit Profile</h2>
+    <div *ngFor="let profile of profiles; let i = index">
+      <form (submit)="updateProfile(i, updatedProfile)">
+        <input type="text" [(ngModel)]="updatedProfile.name" required />
+        <input type="text" [(ngModel)]="updatedProfile.description" required />
+        <input type="text" [(ngModel)]="updatedProfile.photoUrl" required />
+        <input type="text" [(ngModel)]="updatedProfile.address" required />
+        <button type="submit">Update</button>
+        <button type="button" (click)="deleteProfile(i)">Delete</button>
+      </form>
+    </div>
+  </div>
+  
