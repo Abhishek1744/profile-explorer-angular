@@ -1,6 +1,6 @@
-<h2>Profiles</h2>
 <ul>
-  <li *ngFor="let profile of profiles">
-    <a [routerLink]="['/profiles', profile.id]">{{ profile.name }}</a>
-  </li>
-</ul>
+    <li *ngFor="let profile of profiles">
+      <a [routerLink]="['/profile', profile.id]">{{ profile.name }}</a>
+    </li>
+  </ul>
+  
